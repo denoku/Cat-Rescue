@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+//  images: {
+//   loader: 'akamai',
+//   domains: ['localhost'],
+//   path: '/',
+//  }
 };
 
 export default nextConfig;
