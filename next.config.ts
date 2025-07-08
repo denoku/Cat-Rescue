@@ -1,9 +1,9 @@
 const nextConfig = {
-//  images: {
+ images: {
 //   loader: 'akamai',
-//   domains: ['localhost'],
+  domains: ['localhost', 'www.cathouseonthekings.com', 'images.cathouseonthekings.com'],
 //   path: '/',
-//  }
+ }
 };
 
 export default nextConfig;

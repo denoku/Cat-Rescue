@@ -4,6 +4,7 @@ import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { LocalBusinessJsonLd } from 'next-seo'
+import StickyCTA from '@/components/StickyCTA'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -143,8 +144,31 @@ export default function RootLayout({
             },
           ]}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'NGO',
+              name: 'Cat House on the Kings',
+              description:
+                "California's largest no-cage, no-kill, lifetime cat sanctuary and adoption center",
+              url: 'https://cathouseonthekings.com',
+              logo: 'https://cathouseonthekings.com/logo.png',
+              sameAs: [
+                'https://facebook.com/cathouseonthekings',
+                'https://twitter.com/cathousekings',
+                'https://instagram.com/cathouseonthekings',
+              ],
+              nonprofitStatus: 'Registered 501(c)(3)',
+              taxID: '27-0015288',
+            }),
+          }}
+        />
         <Nav />
         {children}
+        <StickyCTA />
+        <div className="h-16" /> {/* Spacer for footer */}
         <Footer />
       </body>
     </html>

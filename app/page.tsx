@@ -55,6 +55,32 @@ function Counter({
   )
 }
 
+function MobileCounter({
+  value,
+  description,
+}: {
+  value: number
+  description: string
+}) {
+  const count = useMotionValue(0)
+  const rounded = useTransform(count, (latest) => Math.round(latest))
+  const { ref, inView } = useInView({ triggerOnce: true })
+
+  useEffect(() => {
+    if (inView) {
+      const animation = animate(count, value, { duration: 2 })
+      return animation.stop
+    }
+  }, [count, value, inView])
+
+  return (
+    <div ref={ref} className="text-center bg-black/30 p-4 rounded-lg">
+      <motion.h3 className="text-3xl font-bold text-white">{rounded}</motion.h3>
+      <p className="text-sm text-white/90 mt-1">{description}</p>
+    </div>
+  )
+}
+
 export default function LandingPage() {
   const [current, setCurrent] = useState(0)
   const [fade, setFade] = useState(true)
@@ -190,12 +216,12 @@ export default function LandingPage() {
       </header>
 
       {/* Alternating Sections */}
-      <article className="relative w-full px-16 mt-3 mb-3 min-h-[320px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
+      <article className="relative w-full px-8 mt-5 min-h-[320px] sm:min-h-[400px] md:min-h-[500px] ">
         <h1 className="sr-only">
           Cat House on the Kings - California's Largest No-Kill Cat Sanctuary
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="relative h-[220px] sm:h-[320px] md:h-[400px]">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-8 items-center">
+          <div className="relative h-[220px] sm:h-[320px] md:h-[400px] lg:h-[500px]">
             <Image
               src="/cat5.jpg"
               alt="Our Mission"
@@ -239,13 +265,14 @@ export default function LandingPage() {
       </article>
 
       {/* Reversed Section */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="relative w-full px-8 mt-5 mb-3 min-h-[320px] sm:min-h-[400px] md:min-h-[500px] ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="relative h-[220px] sm:h-[320px] md:h-[400px] md:order-2">
+          <div className="relative h-[220px] sm:h-[320px] md:h-[400px] lg:h-[500px] md:order-2">
             <Image
               src="/spay.jpg"
               alt="Our Impact"
               fill
+              loading="lazy"
               className="object-cover rounded-lg"
             />
           </div>
@@ -287,14 +314,14 @@ export default function LandingPage() {
       </section>
 
       {/* Video Switcher Section */}
-      <section className="relative w-full bg-gray-50 px-16 mt-3 mb-3 min-h-[320px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
+      <section className="relative w-full bg-gray-50 px-8 mt-3 mb-3 min-h-[320px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
         <div className="absolute inset-0 bg-black/5" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
           <div className="relative h-[220px] sm:h-[320px] md:h-[400px] lg:h-[500px]">
             {/* Animation wrapper */}
-            <div className="relative w-full h-full">
-              {/* YouTube Tour Video */}
-              {/* <iframe
+
+            {/* YouTube Tour Video */}
+            {/* <iframe
                 className={`absolute w-full h-full rounded-lg border-0 transition-opacity duration-500 ${
                   showWebcam ? 'opacity-0 pointer-events-none' : 'opacity-100'
                 }`}
@@ -303,21 +330,21 @@ export default function LandingPage() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               /> */}
-              {/* Webcam Video */}
-              <Link
-                href="https://www.cathouseonthekings.com/video/webcam.php/2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  className={
-                    'absolute w-full h-full rounded-lg border-0 transition-opacity duration-500'
-                  }
-                  src="https://www.cathouseonthekings.com/video/snapshot/webcamsnapshot.php/2"
-                  title="Cat House Webcam"
-                />
-              </Link>
-            </div>
+            {/* Webcam Video */}
+            <Link
+              href="https://www.cathouseonthekings.com/video/webcam.php/2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {/* Update this later to Next/Image but need to update next.config.ts to allow website */}
+              <Image
+                fill
+                alt="Cat House Webcam"
+                className="object-cover rounded-lg"
+                src="https://www.cathouseonthekings.com/video/snapshot/webcamsnapshot.php/2"
+                title="Cat House Webcam"
+              />
+            </Link>
           </div>
           <div>
             <h2 className="text-3xl font-bold mb-4">
@@ -338,6 +365,108 @@ export default function LandingPage() {
             >
               Adoption Form
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Emergency Section - Add this before the Adopt section */}
+      <section className="bg-red-50 py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center mb-4">
+            <div className="bg-red-500 rounded-full p-2 mr-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-white"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-bold text-red-600">
+              Urgent: Cats Needing Immediate Homes
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-red-500">
+              <div className="relative aspect-square w-full mb-3">
+                <Image
+                  src="/cat3.jpg"
+                  alt="Urgent - Senior Cat"
+                  fill
+                  className="object-cover rounded"
+                />
+                <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                  URGENT
+                </div>
+              </div>
+              <h3 className="font-bold text-lg">Oscar (Senior, 12yrs)</h3>
+              <p className="text-sm text-gray-600 mb-3">
+                Oscar needs a home ASAP due to shelter overcrowding. Senior cats
+                have lower adoption rates but make wonderful companions!
+              </p>
+              <Link
+                href="/urgent-adopt"
+                className="block w-full bg-red-500 hover:bg-red-600 text-white text-center py-2 rounded transition"
+              >
+                Help Oscar Now
+              </Link>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-red-500">
+              <div className="relative aspect-square w-full mb-3">
+                <Image
+                  src="/blackcat.jpg"
+                  alt="Urgent - Senior Cat"
+                  fill
+                  className="object-cover rounded"
+                />
+                <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                  URGENT
+                </div>
+              </div>
+              <h3 className="font-bold text-lg">Brady ( 5yrs)</h3>
+              <p className="text-sm text-gray-600 mb-3">
+                Brady came in a stray. He is the sweetest boy and will thrive in
+                a loving, patient home willing to help him heal.
+              </p>
+              <Link
+                href="/urgent-adopt"
+                className="block w-full bg-red-500 hover:bg-red-600 text-white text-center py-2 rounded transition"
+              >
+                Help Brady Now
+              </Link>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-red-500">
+              <div className="relative aspect-square w-full mb-3">
+                <Image
+                  src="/cat6.jpg"
+                  alt="Urgent - Senior Cat"
+                  fill
+                  className="object-cover rounded"
+                />
+                <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                  URGENT
+                </div>
+              </div>
+              <h3 className="font-bold text-lg">Parker (Senior, 14yrs)</h3>
+              <p className="text-sm text-gray-600 mb-3">
+                Parkers family had to move and couldn't take him. He is a sweet
+                senior who deserves a loving home in his golden years.
+              </p>
+              <Link
+                href="/urgent-adopt"
+                className="block w-full bg-red-500 hover:bg-red-600 text-white text-center py-2 rounded transition"
+              >
+                Help Parker Now
+              </Link>
+            </div>
+
+            {/* Add 1-2 more urgent cases */}
           </div>
         </div>
       </section>
@@ -511,34 +640,55 @@ export default function LandingPage() {
       </section>
 
       {/*Donate Section*/}
-      <section className="relative h-[calc(70vh-4rem)] w-full">
+      <section className="relative min-h-[500px] sm:min-h-[600px] md:h-[calc(70vh-4rem)] w-full py-8 md:py-0">
         <Image
           src="/catHappy.jpg"
           alt="Donate to Our Cause"
           fill
-          priority
+          loading="lazy"
           className="object-cover brightness-50 -z-10"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <h1 className="text-6xl font-bold font-dosis text-[#a2bb31] text-center text-shadow-lg/60 mb-8">
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+          {/* Responsive heading - smaller on mobile */}
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-dosis text-[#a2bb31] text-center text-shadow-lg/60 mb-4 sm:mb-6 md:mb-8">
             Your Donation Makes a Difference!
           </h1>
 
-          {/* Stats Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 w-full max-w-4xl mx-auto px-4 relative overflow-hidden">
-            <Counter value={52311} description="Cats Saved" />
-            <Counter value={7900} description="Dogs Rescued" />
-            <Counter value={90000} description="Animals Spayed/Neutered" />
+          {/* Stats Row - horizontal scroll on mobile, grid on desktop */}
+          <div className="w-full max-w-4xl mx-auto mb-6 sm:mb-8 md:mb-12 px-2 sm:px-4">
+            {/* Mobile view (horizontal scroll) */}
+            <div className="flex md:hidden gap-4 pb-2 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+              <div className="min-w-[220px] flex-shrink-0 snap-center">
+                <MobileCounter value={52311} description="Cats Saved" />
+              </div>
+              <div className="min-w-[220px] flex-shrink-0 snap-center">
+                <MobileCounter value={7900} description="Dogs Rescued" />
+              </div>
+              <div className="min-w-[220px] flex-shrink-0 snap-center">
+                <MobileCounter
+                  value={90000}
+                  description="Animals Spayed/Neutered"
+                />
+              </div>
+            </div>
+
+            {/* Desktop view (grid) */}
+            <div className="hidden md:grid grid-cols-3 gap-8">
+              <Counter value={52311} description="Cats Saved" />
+              <Counter value={7900} description="Dogs Rescued" />
+              <Counter value={90000} description="Animals Spayed/Neutered" />
+            </div>
           </div>
-          {/* Donation Buttons */}
-          <div className="flex flex-col md:flex-row gap-4 mt-3  mx-auto px-4">
-            <Button className="bg-[#a2bb31] px-6 p-4 text-white hover:bg-[#a2bb31]/80 transition-colors text-2xl font-semibold ">
+
+          {/* Donation Buttons - smaller on mobile */}
+          <div className="flex flex-col sm:flex-row gap-3 mt-2 w-full max-w-xl mx-auto px-4">
+            <Button className="bg-[#a2bb31] px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:p-4 text-white hover:bg-[#a2bb31]/80 transition-colors text-base sm:text-xl md:text-2xl font-semibold rounded-md">
               <Link href={'/donate'}>Donate Now</Link>
             </Button>
-            <Button className="bg-[#a2bb31] px-6 p-4 text-white hover:bg-[#a2bb31]/80 transition-colors text-2xl font-semibold ">
+            <Button className="bg-[#a2bb31] px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:p-4 text-white hover:bg-[#a2bb31]/80 transition-colors text-base sm:text-xl md:text-2xl font-semibold rounded-md">
               <Link href={'/donate'}>Give Monthly</Link>
             </Button>
-            <Button className="bg-[#a2bb31] px-6 p-4 text-white hover:bg-[#a2bb31]/80 transition-colors text-2xl font-semibold ">
+            <Button className="bg-[#a2bb31] px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:p-4 text-white hover:bg-[#a2bb31]/80 transition-colors text-base sm:text-xl md:text-2xl font-semibold rounded-md">
               <Link href={'/donate'}>Wishlist</Link>
             </Button>
           </div>
