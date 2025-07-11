@@ -36,7 +36,7 @@ const Nav = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="hidden container mx-auto sm:flex items-center justify-between">
         <Image
           src="/logo.png"
           alt="Logo"

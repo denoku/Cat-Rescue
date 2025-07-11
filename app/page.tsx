@@ -471,6 +471,214 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Resources Section - Add after urgent and before regular adoption */}
+      <section className="bg-white py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center font-dosis mb-8">
+            <span className="text-[#a2bb31]">Cat Care Resources</span>
+          </h2>
+          <p className="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12">
+            Our team has created these helpful guides to ensure your new feline
+            friend thrives in your home. Download these free resources for
+            everything you need to know about cat care.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            {/* Resource 1 */}
+            <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105">
+              <div className="h-48 bg-[#f5f9e8] flex items-center justify-center p-6">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-24 w-24 text-[#a2bb31]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-xl mb-2">New Cat Owner Guide</h3>
+                <p className="text-gray-600 mb-4">
+                  Essential tips for the first 30 days with your new cat,
+                  including settling in, introductions to other pets, and
+                  building trust.
+                </p>
+                <Link
+                  href="/resources/new-cat-guide.pdf"
+                  className="inline-flex items-center text-[#a2bb31] font-semibold hover:underline"
+                >
+                  Download PDF
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-1"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Resource 2 */}
+            <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105">
+              <div className="h-48 bg-[#f5f9e8] flex items-center justify-center p-6">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-24 w-24 text-[#a2bb31]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  />
+                </svg>
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-xl mb-2">Cat Nutrition Guide</h3>
+                <p className="text-gray-600 mb-4">
+                  Comprehensive information on feeding your cat at different
+                  life stages, recommended foods, and handling dietary
+                  restrictions.
+                </p>
+                <Link
+                  href="/resources/cat-nutrition.pdf"
+                  className="inline-flex items-center text-[#a2bb31] font-semibold hover:underline"
+                >
+                  Download PDF
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-1"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Resource 3 */}
+            <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105">
+              <div className="h-48 bg-[#f5f9e8] flex items-center justify-center p-6">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-24 w-24 text-[#a2bb31]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-xl mb-2">Play & Enrichment</h3>
+                <p className="text-gray-600 mb-4">
+                  Ideas for toys, games, and activities that will keep your cat
+                  mentally stimulated and physically active at any age.
+                </p>
+                <Link
+                  href="/resources/cat-enrichment.pdf"
+                  className="inline-flex items-center text-[#a2bb31] font-semibold hover:underline"
+                >
+                  Download PDF
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-1"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Resource 4 */}
+            <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105">
+              <div className="h-48 bg-[#f5f9e8] flex items-center justify-center p-6">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-24 w-24 text-[#a2bb31]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-xl mb-2">Health Checklist</h3>
+                <p className="text-gray-600 mb-4">
+                  Comprehensive health monitoring guide to help you recognize
+                  symptoms, know when to see a vet, and keep track of
+                  vaccinations.
+                </p>
+                <Link
+                  href="/resources/cat-health.pdf"
+                  className="inline-flex items-center text-[#a2bb31] font-semibold hover:underline"
+                >
+                  Download PDF
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-1"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/resources"
+              className="inline-block bg-[#a2bb31] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#8fa82a] transition"
+            >
+              Browse All Resources
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-gray-300 py-12">
         {/* Center the heading */}
         <div className="text-center mb-8">
