@@ -1,10 +1,11 @@
-import Metadata from 'next'
+import { Metadata } from 'next'
 import { Geist, Geist_Mono, Raleway, Dosis } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { LocalBusinessJsonLd } from 'next-seo'
 import StickyCTA from '@/components/StickyCTA'
+import { Toaster } from '@/components/ui/sonner'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -94,12 +95,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${dosis.variable} antialiased`}
       >
         <LocalBusinessJsonLd
-          useAppDir={true} // Required for App Router
+          useAppDir={true}
           type="AnimalShelter"
           id="https://cathouseonthekings.com"
           name="Cat House on The Kings"
@@ -167,8 +168,10 @@ export default function RootLayout({
         />
         <Nav />
         {children}
+        <Toaster position="top-center" richColors />{' '}
+        {/* Global toast container */}
         <StickyCTA />
-        <div className="h-16" /> {/* Spacer for footer */}
+        <div className="h-16" />
         <Footer />
       </body>
     </html>

@@ -838,7 +838,7 @@ export default function LandingPage() {
           </div>
           <div className="text-center mt-8">
             <Link
-              href="/blog"
+              href="/news"
               className="inline-block bg-[#a2bb31] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#8fa82a] transition"
             >
               View All News

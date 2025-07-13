@@ -25,14 +25,21 @@ import {
 } from './ui/dropdown-menu'
 import { Button } from './ui/button'
 import { Menu } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 
 const Nav = () => {
   const scrolled = useScroll()
+  const pathname = usePathname()
+
+  // Check if we're on a page with no header image
+  const isLightPage = pathname !== '/'
   return (
     <div
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-background/80 backdrop-blur-sm shadow-sm'
+          : isLightPage
+          ? 'bg-[#a2bb31]/80 backdrop-blur-sm'
           : 'bg-transparent'
       }`}
     >
@@ -69,8 +76,23 @@ const Nav = () => {
                     : 'text-white hover:text-black/80 text-xl font-bold'
                 }`}
               >
-                <Link href="/" className="p-2 block">
+                <Link href="/about" className="p-2 block">
                   About
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                asChild
+                className={`${
+                  scrolled
+                    ? 'text-black-foreground hover:bg-primary/50 text-xl font-bold'
+                    : 'text-white hover:text-black/80 text-xl font-bold'
+                }`}
+              >
+                <Link href="/adopt" className="p-2 block">
+                  Adopt
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -83,7 +105,7 @@ const Nav = () => {
                     : 'text-white hover:text-black/80 text-xl font-bold'
                 }`}
               >
-                <Link href="/" className="p-2 block">
+                <Link href="/contact" className="p-2 block">
                   Contact
                 </Link>
               </NavigationMenuLink>
