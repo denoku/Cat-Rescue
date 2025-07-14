@@ -56,13 +56,15 @@ export async function generateMetadata({
   }
 }
 
-// Page component with proper Next.js App Router typing
+// Page component with async handling of Promise params
 export default async function CatDetailsPage({
   params,
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }> | { id: string }
 }) {
-  const cat = cats.find((c) => c.id === params.id)
+  // Resolve the params Promise if it is one
+  const resolvedParams = params instanceof Promise ? await params : params
+  const cat = cats.find((c) => c.id === resolvedParams.id)
 
   // Handle 404 if cat doesn't exist
   if (!cat) {
