@@ -56,15 +56,14 @@ export async function generateMetadata({
   }
 }
 
-// Page component with async handling of Promise params
-export default async function CatDetailsPage({
-  params,
-}: {
-  params: Promise<{ id: string }> | { id: string }
-}) {
-  // Resolve the params Promise if it is one
-  const resolvedParams = params instanceof Promise ? await params : params
-  const cat = cats.find((c) => c.id === resolvedParams.id)
+interface Props {
+  params: Promise<{ id: string }>
+}
+
+// Page component: await params before using
+export default async function CatDetailsPage({ params }: Props) {
+  const { id } = await params
+  const cat = cats.find((c) => c.id === id)
 
   // Handle 404 if cat doesn't exist
   if (!cat) {
