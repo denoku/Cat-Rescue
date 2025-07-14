@@ -13,15 +13,17 @@ import {
 } from '@/components/ui/breadcrumb'
 import { CalendarIcon, Heart, SlashIcon, Users } from 'lucide-react'
 
-// Types for generateMetadata and page params
-type Params = {
+// Types for metadata generation
+type CatParams = {
   params: {
     id: string
   }
 }
 
 // Dynamic metadata generation based on cat ID
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: CatParams): Promise<Metadata> {
   const cat = cats.find((c) => c.id === params.id)
 
   // Return 404 metadata if cat not found
@@ -54,8 +56,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
 }
 
-// Page component with correct type annotation
-export default function CatDetailsPage({ params }: Params) {
+// Page component with proper Next.js App Router typing
+export default function CatDetailsPage({ params }: { params: { id: string } }) {
   const cat = cats.find((c) => c.id === params.id)
 
   // Handle 404 if cat doesn't exist
