@@ -13,20 +13,15 @@ import {
 } from '@/components/ui/breadcrumb'
 import { CalendarIcon, Heart, SlashIcon, Users } from 'lucide-react'
 
-// Types for metadata generation
-type CatParams = {
-  params: {
-    id: string
-  }
-}
-
 // Dynamic metadata generation based on cat ID
 export async function generateMetadata({
   params,
-}: CatParams): Promise<Metadata> {
-  const cat = cats.find((c) => c.id === params.id)
+}: {
+  params: Promise<{ id: string }>
+}): Promise<Metadata> {
+  const { id } = await params
+  const cat = cats.find((c) => c.id === id)
 
-  // Return 404 metadata if cat not found
   if (!cat) {
     return {
       title: 'Cat Not Found | Cat Rescue',
@@ -56,16 +51,15 @@ export async function generateMetadata({
   }
 }
 
-interface Props {
-  params: Promise<{ id: string }>
-}
-
 // Page component: await params before using
-export default async function CatDetailsPage({ params }: Props) {
+export default async function CatDetailsPage({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
   const { id } = await params
   const cat = cats.find((c) => c.id === id)
 
-  // Handle 404 if cat doesn't exist
   if (!cat) {
     notFound()
   }
