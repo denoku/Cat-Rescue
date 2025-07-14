@@ -8,15 +8,14 @@ const Footer = () => {
     <footer className="bg-gray-800 text-white py-6">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row lg:gap-8 mb-8">
-          {/* The Cat House Section */}
+          {/* The Cat Section */}
           <div className="flex flex-col flex-1 min-w-0 md:items-start mt-8 md:mt-0 px-7">
             <h2 className="text-2xl font-light mb-4 text-center md:text-left font-dosis uppercase">
-              The Cat House
+              About Us
             </h2>
             <Link
               className="text-center md:text-left mb-4 text-[#a2bb31] font-bold hover:text-[#a2bb31]/80"
-              href="https://www.cathouseonthekings.com/facility.php"
-              target="_blank"
+              href="#"
               rel="noopener noreferrer"
             >
               Tour our sanctuary
@@ -24,7 +23,6 @@ const Footer = () => {
             <Link
               className="text-center md:text-left mb-4 text-[#a2bb31] font-bold hover:text-[#a2bb31]/80"
               href="/adopt"
-              target="_blank"
               rel="noopener noreferrer"
             >
               Foster a cat
@@ -32,10 +30,9 @@ const Footer = () => {
             <Link
               className="text-center md:text-left mb-4 text-[#a2bb31] font-bold hover:text-[#a2bb31]/80"
               href="/about"
-              target="_blank"
               rel="noopener noreferrer"
             >
-              Meet our founder
+              Meet our team
             </Link>
           </div>
           {/* Donate Section */}
@@ -46,7 +43,6 @@ const Footer = () => {
             <Link
               className="text-center md:text-left mb-4 text-[#a2bb31] font-bold hover:text-[#a2bb31]/80"
               href="/donate"
-              target="_blank"
               rel="noopener noreferrer"
             >
               Cash Donations
@@ -54,18 +50,16 @@ const Footer = () => {
             <Link
               className="text-center md:text-left mb-4 text-[#a2bb31] font-bold hover:text-[#a2bb31]/80"
               href="/sponsor"
-              target="_blank"
               rel="noopener noreferrer"
             >
-              Sponsor a Cat or Dog
+              Sponsor a Cat
             </Link>
             <Link
               className="text-center md:text-left mb-4 text-[#a2bb31] font-bold hover:text-[#a2bb31]/80"
               href="/volunteer"
-              target="_blank"
               rel="noopener noreferrer"
             >
-              Donate an item from our wishlist
+              Donate items from our wishlist
             </Link>
           </div>
           {/* Contact Section */}
@@ -77,14 +71,14 @@ const Footer = () => {
               Address:
             </p>
             <p className="text-center md:text-left mb-4 text-gray-400">
-              7120 S. Kings River Rd, Parlier, CA 93648
+              [Organization Address]
             </p>
             <p className="text-center md:text-left mb-4 text-[#a2bb31] font-bold">
               Phone:
             </p>
 
             <p className="text-center md:text-left mb-4 text-gray-400">
-              559-638-0030
+              [Phone Number]
             </p>
           </div>
           {/* Links Section */}
@@ -95,7 +89,6 @@ const Footer = () => {
             <Link
               className="text-center md:text-left mb-4 text-[#a2bb31] font-bold hover:text-[#a2bb31]/80"
               href="/donate"
-              target="_blank"
               rel="noopener noreferrer"
             >
               Adoptions
@@ -103,7 +96,6 @@ const Footer = () => {
             <Link
               className="text-center md:text-left mb-4 text-[#a2bb31] font-bold hover:text-[#a2bb31]/80"
               href="/sponsor"
-              target="_blank"
               rel="noopener noreferrer"
             >
               Surrender a Cat
@@ -111,49 +103,44 @@ const Footer = () => {
             <Link
               className="text-center md:text-left mb-4 text-[#a2bb31] font-bold hover:text-[#a2bb31]/80"
               href="/volunteer"
-              target="_blank"
               rel="noopener noreferrer"
             >
               Low Cost Spay/Neuter
             </Link>
             <Link
               className="text-center md:text-left mb-4 text-[#a2bb31] font-bold hover:text-[#a2bb31]/80"
-              href="/volunteer"
-              target="_blank"
+              href="/success-stories"
               rel="noopener noreferrer"
             >
-              Cats Safe at Home
+              Success Stories
             </Link>
             <div className="mt-4">
               <p className="font-light text-sm ">
                 Registered 501(c)(3). <br />
-                EIN: 27-0015288
+                EIN: [Organization EIN]
               </p>
-              {/* <p>EIN:27-0015288 </p> */}
             </div>
           </div>
         </div>
-        {/* <div className="border-t border-gray-700 my-4" /> */}
 
         <div className="flex flex-col md:flex-row lg:gap-6 items-center justify-between px-4 md:px-0 ">
           {/* Left: Logo and Name */}
           <div className="flex items-center flex-1 space-x-4 mb-4 md:mb-0">
             <Image
               src="/logo.png"
-              alt="The Cat House on the Kings Logo"
+              alt="Logo"
               width={70}
               height={70}
               className="rounded-full"
             />
             <span className="text-5xl font-light font-dosis uppercase">
-              The Cat House on the Kings
+              Cat Rescue
             </span>
           </div>
           {/* Right: Social Links */}
           <div className="flex items-center flex-1 justify-center md:justify-end space-x-4">
             <Link
-              href="https://www.facebook.com/TheCatHouseOnTheKings"
-              target="_blank"
+              href="#"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-400"
             >
@@ -167,8 +154,7 @@ const Footer = () => {
               </svg>
             </Link>
             <Link
-              href="https://www.instagram.com/thecathouseonthekings/"
-              target="_blank"
+              href="#"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-400"
             >
@@ -182,8 +168,7 @@ const Footer = () => {
               </svg>
             </Link>
             <Link
-              href={'https://www.tiktok.com/@thecathouseonthekings'}
-              target="_blank"
+              href={'#'}
               rel="noopener noreferrer"
               className="text-white hover:text-gray-400"
             >
@@ -192,7 +177,6 @@ const Footer = () => {
                 viewBox="0 0 448 512"
                 className="h-10 w-10 mr-7"
               >
-                {/* <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --> */}
                 <path
                   fill="currentColor"
                   d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"
@@ -200,8 +184,7 @@ const Footer = () => {
               </svg>
             </Link>
             <Link
-              href="https://www.youtube.com/user/cathouseonthekings"
-              target="_blank"
+              href="#"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-400"
             >
@@ -218,8 +201,8 @@ const Footer = () => {
         </div>
         <div className="mt-4 text-center">
           <p className="text-sm">
-            &copy; {new Date().getFullYear()} The Cat House on the Kings. All
-            rights reserved. | Designed by Brian Wheeler
+            &copy; {new Date().getFullYear()} [Organization Name]. All rights
+            reserved. | Designed by Brian Wheeler
           </p>
         </div>
       </div>

@@ -118,7 +118,7 @@ export default function LandingPage() {
     <main
       className="flex flex-col"
       role="main"
-      aria-label="Cat House on the Kings Home Page"
+      aria-label="Cat Rescue Home Page"
     >
       {/* Hero Section */}
       <header
@@ -153,7 +153,7 @@ export default function LandingPage() {
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center p-8 bg-black/20">
               <h1 className="text-5xl md:text-7xl font-bold font-sans text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-center">
-                Cat House on the Kings
+                Cat Rescue
               </h1>
             </div>
           </div>
@@ -217,9 +217,7 @@ export default function LandingPage() {
 
       {/* Alternating Sections */}
       <article className="relative w-full px-8 mt-5 min-h-[320px] sm:min-h-[400px] md:min-h-[500px] ">
-        <h1 className="sr-only">
-          Cat House on the Kings - California's Largest No-Kill Cat Sanctuary
-        </h1>
+        <h1 className="sr-only">Cat Rescue - Largest No-Kill Cat Sanctuary</h1>
         <div className="grid grid-cols-1 md:grid-cols-2  gap-8 items-center">
           <div className="relative h-[220px] sm:h-[320px] md:h-[400px] lg:h-[500px]">
             <Image
@@ -234,28 +232,26 @@ export default function LandingPage() {
               Our Mission
             </h2>
             <p className="text-lg text-muted-foreground">
-              The Cat House on the Kings is California's largest no-cage,
-              no-kill, lifetime cat sanctuary and adoption center. Our mission
-              is to place rescued cats and kittens into loving, permanent homes.
-              To provide a safe, happy and healthy home for unwanted cats and
-              kittens in a unique, no-cage facility. To prevent pet
-              overpopulation through spaying and neutering and to educate the
-              public about responsible pet ownership.
+              Cat Rescue is a leading no-cage, no-kill sanctuary and adoption
+              center dedicated to feline welfare. Our mission is to place
+              rescued cats and kittens into loving, permanent homes, provide a
+              safe and enriching environment for unwanted cats, prevent pet
+              overpopulation through spaying and neutering programs, and educate
+              the public about responsible pet ownership.
             </p>
             <p className="text-lg text-muted-foreground mt-4">
-              The Cat House is a 501(c)(3) nonprofit corporation, receives no
-              government or public funding, and relies entirely on donations
-              from the public to carry out its mission. Since its founding 33
-              years ago, The Cat House on the Kings has saved an estimated
-              52,311 cats and 7,900 dogs, not counting the 90,000 animals (est.)
-              we have spayed & neutered! We currently care for more than 700
-              cats and kittens, a dozen or so dogs and dozens of peacocks. Find
-              out more about our{' '}
-              <Link href="/about" className="text-blue-600 ">
+              As a 501(c)(3) nonprofit organization, Cat Rescue operates without
+              government funding and relies entirely on donations from
+              compassionate supporters. Since our founding, we've saved over
+              50,000 cats and 7,000 dogs, and have spayed and neutered
+              approximately 90,000 animals! Our sanctuary currently cares for
+              more than 700 cats and kittens daily, along with other rescued
+              animals. Find out more about our{' '}
+              <Link href="/about" className="text-blue-600">
                 history and mission
               </Link>{' '}
               or how you can{' '}
-              <Link href="/contribute" className="text-blue-600 ">
+              <Link href="/contribute" className="text-blue-600">
                 contribute
               </Link>{' '}
               to our cause.
@@ -278,98 +274,114 @@ export default function LandingPage() {
           </div>
           <div className="md:order-1">
             <h2 className="text-3xl font-bold mb-4">
-              We can help with low-cost spay/neuter surgery!
+              Low-Cost Spay/Neuter Services
             </h2>
             <p className="text-lg text-muted-foreground">
-              The adoption center at the sanctuary in Parlier is open afternoons
-              1pm-4pm by appointment only. You must submit an{' '}
+              Spaying and neutering is a vital step in controlling the cat
+              population and ensuring healthier, happier lives for our feline
+              friends. We offer affordable spay/neuter surgeries to help make
+              responsible pet ownership accessible to everyone. Our low-cost
+              services are available to the public and aim to reduce the number
+              of unwanted litters, prevent certain health issues, and reduce
+              behaviors like spraying or roaming. Whether you're a pet owner or
+              caring for community cats, we're here to help make spay/neuter
+              simple and affordable. {''}
               <Link href="/adopt" className="text-blue-600 ">
-                online application
+                schedule an appointment
               </Link>{' '}
-              and receive an approval e-mail before making an adoption
-              appointment. Please call{' '}
-              <Link href="tel:(559) 638-8696" className="text-blue-600 ">
-                (559) 638-8696 (Option 1)
+              or{' '}
+              <Link href="/spay-neuter" className="text-blue-600">
+                learn more
               </Link>{' '}
-              for an appointment before coming by. Our off-site adoption center
-              inside
-              <a
-                href="https://maps.google.com/?q=Petco 4144 N. Blackstone Ave, Fresno, CA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="italic text-blue-700 font-semibold underline hover:text-blue-900"
-              >
-                {' '}
-                Petco at 4144 N. Blackstone at Ashlan in Fresno
-              </a>{' '}
-              is open daily 10:30am-5pm and Wednesday 10:30am-6pm (photos,
-              video). Call {'  '}
-              <Link href="tel:(559) 222-0228" className="text-blue-600 ">
-                (559) 222-0228
-              </Link>{' '}
-              for more information.
+              about our program and eligibility requirements.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Video Switcher Section */}
+      {/* Video/Webcam Demo Section */}
       <section className="relative w-full bg-gray-50 px-8 mt-3 mb-3 min-h-[320px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
         <div className="absolute inset-0 bg-black/5" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
           <div className="relative h-[220px] sm:h-[320px] md:h-[400px] lg:h-[500px]">
-            {/* Animation wrapper */}
-
-            {/* YouTube Tour Video */}
-            {/* <iframe
-                className={`absolute w-full h-full rounded-lg border-0 transition-opacity duration-500 ${
-                  showWebcam ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                }`}
-                src="https://www.youtube.com/embed/R4u41ysH3eE"
-                title="Watch Our Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              /> */}
-            {/* Webcam Video */}
-            <Link
-              href="https://www.cathouseonthekings.com/video/webcam.php/2"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {/* Update this later to Next/Image but need to update next.config.ts to allow website */}
+            {/* Demo Image with Overlays */}
+            <div className="relative w-full h-full rounded-lg overflow-hidden border-2 border-gray-200">
               <Image
                 fill
-                alt="Cat House Webcam"
+                alt="Live Cat Webcam Demo"
                 className="object-cover rounded-lg"
-                src="https://www.cathouseonthekings.com/video/snapshot/webcamsnapshot.php/2"
-                title="Cat House Webcam"
+                src="/success-after-1.jpg"
+                style={{ filter: 'grayscale(30%) brightness(80%)' }}
               />
-            </Link>
+
+              {/* Add webcam-like elements */}
+              <div className="absolute top-0 left-0 right-0 bg-black/70 text-white text-xs p-2 flex items-center">
+                <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse mr-2"></div>
+                <span>DEMO: Live Cat Rescue Webcam</span>
+              </div>
+
+              {/* Demo video controls at the bottom */}
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-2 flex justify-between items-center">
+                <div className="flex space-x-2">
+                  <button className="p-1 hover:bg-white/20 rounded">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                      />
+                    </svg>
+                  </button>
+                  <button className="p-1 hover:bg-white/20 rounded">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 01-.707-7.07m-2.122 9.9a9 9 0 010-12.728"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <span className="text-xs opacity-70">Portfolio Demo</span>
+              </div>
+            </div>
           </div>
           <div>
-            <h2 className="text-3xl font-bold mb-4">
-              Live Cat House Webcam
-              {/* {showWebcam ? 'Live Cat House Webcam' : 'Watch Our Video'} */}
-            </h2>
+            <h2 className="text-3xl font-bold mb-4">Live Cat Webcam</h2>
             <p className="text-lg text-muted-foreground mb-4">
-              {/* {showWebcam
-                ?  */}
               Watch our cats live on our 24/7 webcam! All of the cats you see
-              here are looking for the new forever home. If you see any you like
-              make sure to fill out for an adoption!'
-              {/* : 'Lynea Lattanzio, who founded and runs The Cat House on the Kings, talks about how it came about and gives you a peek into our unique environment in these videos by Jack Perez and Chris Poole.'} */}
+              here are looking for their forever home. If you see any you like,
+              make sure to fill out an adoption application.
+              <span className="block mt-2 text-sm italic">
+                (This is a portfolio demo - actual webcam functionality would be
+                implemented for a real client)
+              </span>
             </p>
-            <button
+            <Button
+              asChild
               className="mt-2 px-4 py-2 bg-[#a2bb31] text-white rounded hover:bg-[#a2bb31]/80 transition"
-              onClick={() => setShowWebcam((v) => !v)}
             >
-              Adoption Form
-            </button>
+              <Link href="/adopt/application">Adoption Form</Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Emergency Section - Add this before the Adopt section */}
+      {/* Emergency Section  */}
       <section className="bg-red-50 py-8">
         <div className="container mx-auto px-4">
           <div className="flex items-center mb-4">
@@ -471,7 +483,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Resources Section - Add after urgent and before regular adoption */}
+      {/* Resources Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center font-dosis mb-8">
@@ -678,9 +690,8 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
+      {/* Adopt a Cat Section */}
       <section className="bg-gray-300 py-12">
-        {/* Center the heading */}
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold uppercase font-dosis">
             <span className="text-[#a2bb31]">Adopt a Cat</span>
@@ -843,6 +854,57 @@ export default function LandingPage() {
             >
               View All News
             </Link>
+          </div>
+        </div>
+      </section>
+      {/* Success Stories Preview Section */}
+      <section className="bg-[#f5f9e8] py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold uppercase font-dosis">
+              <span className="text-[#a2bb31]">Success Stories</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
+              Meet some of the cats who found their forever homes thanks to our
+              sanctuary and the compassionate families who adopted them.
+            </p>
+          </div>
+
+          {/* Featured Success Story */}
+          <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div className="relative">
+              <div className="aspect-square relative rounded-lg overflow-hidden">
+                <Image
+                  src="/success-after-3.jpg"
+                  alt="Shadow in his new home"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 rounded-lg overflow-hidden border-4 border-white">
+                <Image
+                  src="/success-before-3.jpg"
+                  alt="Shadow before adoption"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold mb-3">Shadow's Story</h3>
+              <p className="text-lg mb-4">
+                Shadow was with us for over a year after being found as a stray.
+                This shy black cat finally found his perfect match with the
+                Johnson family, who gave him time and patience to adjust.
+              </p>
+              <blockquote className="italic border-l-4 border-[#a2bb31] pl-4 mb-6">
+                "Shadow now sleeps on our bed every night and has become the
+                most loving companion we could ask for!"
+              </blockquote>
+              <Button asChild className="bg-[#a2bb31] hover:bg-[#8fa82a]">
+                <Link href="/success-stories">Read More Success Stories</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

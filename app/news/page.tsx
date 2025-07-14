@@ -86,30 +86,80 @@ export default function NewsPage() {
         </p>
       </div>
 
-      {/* Featured Post */}
+      {/* Featured Post - Mobile Responsive */}
       <div className="mb-12">
-        <div className="relative aspect-video rounded-lg overflow-hidden mb-6">
-          <Image
-            src="/fundraiser.jpg"
-            alt="Featured post"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
-            <span className="text-white bg-[#a2bb31] px-3 py-1 rounded-full text-sm font-medium inline-block mb-2">
-              Featured
-            </span>
-            <h2 className="text-3xl font-bold text-white mb-2">
-              Annual Fundraiser Exceeds Goal by 150%
-            </h2>
-            <p className="text-white/90 mb-4 max-w-2xl">
-              Our annual "Whiskers & Wine" fundraiser was an incredible success,
-              raising over $75,000 for our medical fund. Thank you to everyone
-              who attended and donated!
-            </p>
-            <div className="flex items-center text-white/80">
-              <span className="mr-4">May 10, 2023</span>
-              <span>By Executive Director</span>
+        {/* Mobile Layout (stacked) */}
+        <div className="md:hidden">
+          <div className="relative aspect-video rounded-lg overflow-hidden mb-4">
+            <Image
+              src="/fundraiser.jpg"
+              alt="Featured post"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute top-0 left-0">
+              <span className="m-3 inline-block bg-[#a2bb31] px-3 py-1 rounded-full text-sm font-medium text-white">
+                Featured
+              </span>
+            </div>
+          </div>
+          <h2 className="text-2xl font-bold mb-2">
+            Annual Fundraiser Exceeds Goal by 150%
+          </h2>
+          <div className="text-sm text-gray-500 mb-3">
+            <span className="mr-4">May 10, 2023</span>
+            <span>By Executive Director</span>
+          </div>
+          <p className="text-gray-600 mb-4">
+            Our annual "Whiskers & Wine" fundraiser was an incredible success,
+            raising over $75,000 for our medical fund. Thank you to everyone who
+            attended and donated!
+          </p>
+          <Link
+            href="/news/annual-fundraiser"
+            className="text-[#a2bb31] font-medium hover:underline inline-flex items-center"
+          >
+            Read full story
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 ml-1"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </Link>
+        </div>
+
+        {/* Desktop Layout (overlay) - Hide on mobile */}
+        <div className="hidden md:block">
+          <div className="relative aspect-video rounded-lg overflow-hidden mb-6">
+            <Image
+              src="/fundraiser.jpg"
+              alt="Featured post"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
+              <span className="text-white bg-[#a2bb31] px-3 py-1 rounded-full text-sm font-medium inline-block mb-2">
+                Featured
+              </span>
+              <h2 className="text-3xl font-bold text-white mb-2">
+                Annual Fundraiser Exceeds Goal by 150%
+              </h2>
+              <p className="text-white/90 mb-4 max-w-2xl">
+                Our annual "Whiskers & Wine" fundraiser was an incredible
+                success, raising over $75,000 for our medical fund. Thank you to
+                everyone who attended and donated!
+              </p>
+              <div className="flex items-center text-white/80">
+                <span className="mr-4">May 10, 2023</span>
+                <span>By Executive Director</span>
+              </div>
             </div>
           </div>
         </div>

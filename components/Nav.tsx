@@ -33,6 +33,10 @@ const Nav = () => {
 
   // Check if we're on a page with no header image
   const isLightPage = pathname !== '/'
+
+  const [menuOpen, setMenuOpen] = useState(false)
+  const closeMenu = () => setMenuOpen(false)
+
   return (
     <div
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -76,8 +80,8 @@ const Nav = () => {
                     : 'text-white hover:text-black/80 text-xl font-bold'
                 }`}
               >
-                <Link href="/about" className="p-2 block">
-                  About
+                <Link href="/news" className="p-2 block">
+                  News
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -163,6 +167,20 @@ const Nav = () => {
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                asChild
+                className={`${
+                  scrolled
+                    ? 'text-black-foreground hover:bg-primary/50 text-xl font-bold'
+                    : 'text-white hover:text-black/80 text-xl font-bold'
+                }`}
+              >
+                <Link href="/success-stories" className="p-2 block">
+                  Success Stories
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
             {/* <NavigationMenuItem>
             <NavigationMenuTrigger
               className={`${
@@ -220,7 +238,7 @@ const Nav = () => {
         <Button className="bg-[#a2bb31] text-white px-4 py-1 mr-2 rounded-md text-sm font-semibold hover:bg-[#8fa82a] transition">
           <Link href="/donate">Donate</Link>
         </Button>
-        <DropdownMenu>
+        <DropdownMenu open={menuOpen} onOpenChange={setMenuOpen}>
           <DropdownMenuTrigger asChild className="">
             <Button
               variant={'ghost'}
@@ -236,12 +254,28 @@ const Nav = () => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-48" align="start">
-            <Link href="/" className="py-2 text-lg font-bold">
-              <DropdownMenuLabel>Home</DropdownMenuLabel>
-            </Link>
-            <DropdownMenuGroup>
-              <DropdownMenuItem>About</DropdownMenuItem>
-            </DropdownMenuGroup>
+            <div onClick={closeMenu}>
+              <Link href="/" className="py-2 text-lg font-bold">
+                <DropdownMenuLabel>Home</DropdownMenuLabel>
+              </Link>
+              <DropdownMenuGroup>
+                <DropdownMenuItem onSelect={closeMenu}>
+                  <Link href="/news">News</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem onSelect={closeMenu}>
+                  <Link href="/adopt">Adopt</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem onSelect={closeMenu}>
+                  <Link href="/contact">Contact</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem onSelect={closeMenu}>
+                  <Link href="/donate">Donate</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem onSelect={closeMenu}>
+                  <Link href="/success-stories">Success Stories</Link>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+            </div>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

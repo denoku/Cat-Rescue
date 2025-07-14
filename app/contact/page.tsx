@@ -61,8 +61,8 @@ export default function ContactPage() {
               <MapPin className="w-6 h-6 text-[#a2bb31] mr-4 flex-shrink-0" />
               <div>
                 <h3 className="font-bold mb-1">Visit Our Sanctuary</h3>
-                <p className="mb-1">7120 S. Kings River Road</p>
-                <p>Parlier, CA 93648</p>
+                <p className="mb-1">123 Main St. </p>
+                <p>Random Town, RD 12345</p>
               </div>
             </div>
 
@@ -70,8 +70,8 @@ export default function ContactPage() {
               <Phone className="w-6 h-6 text-[#a2bb31] mr-4 flex-shrink-0" />
               <div>
                 <h3 className="font-bold mb-1">Call Us</h3>
-                <p className="mb-1">(559) 638-8696 (General)</p>
-                <p>(559) 638-0030 (Adoptions)</p>
+                <p className="mb-1">(123) 456-7890 (General)</p>
+                <p>(559) 555-5555 (Adoptions)</p>
               </div>
             </div>
 
@@ -79,8 +79,8 @@ export default function ContactPage() {
               <Mail className="w-6 h-6 text-[#a2bb31] mr-4 flex-shrink-0" />
               <div>
                 <h3 className="font-bold mb-1">Email Us</h3>
-                <p className="mb-1">info@cathouseonthekings.com</p>
-                <p>adoptions@cathouseonthekings.com</p>
+                <p className="mb-1">[Organization email]</p>
+                <p>[Organization email]</p>
               </div>
             </div>
 
@@ -109,7 +109,7 @@ export default function ContactPage() {
               </div>
               {/* Link to actual Google Maps */}
               <a
-                href="https://maps.google.com/?q=Cat+House+on+the+Kings+Parlier+CA"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute bottom-4 right-4 bg-white py-2 px-4 rounded-md shadow-md flex items-center text-sm font-medium text-blue-600"
