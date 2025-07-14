@@ -57,7 +57,11 @@ export async function generateMetadata({
 }
 
 // Page component with proper Next.js App Router typing
-export default function CatDetailsPage({ params }: { params: { id: string } }) {
+export default async function CatDetailsPage({
+  params,
+}: {
+  params: { id: string }
+}) {
   const cat = cats.find((c) => c.id === params.id)
 
   // Handle 404 if cat doesn't exist
