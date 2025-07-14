@@ -263,8 +263,8 @@ export default function CatDetailsPage({ params }: { params: { id: string } }) {
             </div>
             <h3 className="text-lg font-bold mb-2">Meet & Match</h3>
             <p className="text-gray-600 text-sm">
-              Visit our sanctuary to meet {cat.name} and ensure you're a good
-              match
+              Visit our sanctuary to meet {cat.name} and ensure you&apos;re a
+              good match
             </p>
           </div>
 

@@ -138,10 +138,12 @@ export default function LandingPage() {
 
         <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
           <div className="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
-            <img
+            <Image
               src={heroImages[current]}
               alt={`Hero ${current + 1}`}
-              className="block w-full backdrop-blur-sm object-cover h-[50vh]"
+              fill
+              className="block w-full backdrop-blur-sm object-cover"
+              priority
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center p-8 bg-black/20">
               <h1 className="text-5xl md:text-7xl font-bold font-sans text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-center">
@@ -890,8 +892,8 @@ export default function LandingPage() {
                 Johnson family, who gave him time and patience to adjust.
               </p>
               <blockquote className="italic border-l-4 border-[#a2bb31] pl-4 mb-6">
-                "Shadow now sleeps on our bed every night and has become the
-                most loving companion we could ask for!"
+                &quot;Shadow now sleeps on our bed every night and has become
+                the most loving companion we could ask for!&quot;
               </blockquote>
               <Button asChild className="bg-[#a2bb31] hover:bg-[#8fa82a]">
                 <Link href="/success-stories">Read More Success Stories</Link>

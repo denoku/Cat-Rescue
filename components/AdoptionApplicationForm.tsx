@@ -129,7 +129,7 @@ export const AdoptionApplicationForm = () => {
         </CardContent>
         <CardFooter>
           <Button className="bg-[#a2bb31] hover:bg-[#8fa82a]">
-            <a href="/adopt">Browse More Cats</a>
+            <Link href="/adopt">Browse More Cats</Link>
           </Button>
         </CardFooter>
       </Card>

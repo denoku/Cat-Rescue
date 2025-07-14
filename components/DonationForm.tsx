@@ -26,6 +26,7 @@ import {
 } from '@/components/ui/card'
 import { CreditCard, AlertCircle } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const DonationForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -120,7 +121,7 @@ export const DonationForm = () => {
         </CardContent>
         <CardFooter className="flex justify-center">
           <Button className="bg-[#a2bb31] hover:bg-[#8fa82a]">
-            <a href="/">Return to Homepage</a>
+            <Link href="/">Return to Homepage</Link>
           </Button>
         </CardFooter>
       </Card>
@@ -137,7 +138,7 @@ export const DonationForm = () => {
           <CardHeader>
             <CardTitle>Donation Amount</CardTitle>
             <CardDescription>
-              Choose how much you'd like to donate.
+              Choose how much you&apos;d like to donate.
             </CardDescription>
           </CardHeader>
           <CardContent>
