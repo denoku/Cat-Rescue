@@ -21,9 +21,7 @@ type Params = {
 }
 
 // Dynamic metadata generation based on cat ID
-export async function generateMetadata({
-  params,
-}: Params): Promise<Metadata> {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const cat = cats.find((c) => c.id === params.id)
 
   // Return 404 metadata if cat not found
