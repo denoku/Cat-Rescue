@@ -387,7 +387,9 @@ export default function AdoptionPageClient({ cats }: { cats: Cat[] }) {
 
           <div className="mt-8 text-center">
             <Button className="bg-[#a2bb31] hover:bg-[#8fa82a] text-white px-6 py-3 text-lg">
-              Start Adoption Application
+              <Link href="/adopt/application" className="w-full">
+                Start Adoption Application
+              </Link>
             </Button>
           </div>
         </section>

@@ -12,8 +12,8 @@ const heroImages = [
   '/kittens.jpg',
   '/catHappy.jpg',
   '/cat.jpg',
-  '/kittens.jpg',
-  '/kittens.jpg',
+  '/blackcat.jpg',
+  '/cat6.jpg',
 ]
 
 function Counter({
@@ -118,46 +118,50 @@ export default function LandingPage() {
         role="banner"
       >
         <div className="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0">
-          <button
-            type="button"
-            className="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            className="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            className="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-            aria-label="Slide 3"
-          ></button>
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              className={`mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] ${
+                index === current ? 'opacity-100' : 'opacity-50'
+              } transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none`}
+              aria-current={index === current ? 'true' : 'false'}
+              aria-label={`Slide ${index + 1}`}
+              onClick={() => setCurrent(index)}
+            ></button>
+          ))}
         </div>
 
-        <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-          <div className="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
-            <Image
-              src={heroImages[current]}
-              alt={`Hero ${current + 1}`}
-              fill
-              className="block w-full backdrop-blur-sm object-cover"
-              priority
-            />
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 bg-black/20">
-              <h1 className="text-5xl md:text-7xl font-bold font-sans text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-center">
-                Cat Rescue
-              </h1>
+        {/* Simplified image container with correct position styling */}
+        <div className="absolute inset-0">
+          {heroImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+                index === current ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <Image
+                src={image}
+                alt={`Hero ${index + 1}`}
+                fill
+                sizes="100vw"
+                priority={index === 0}
+                className="object-cover"
+              />
             </div>
+          ))}
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-8 bg-black/20">
+            <h1 className="text-5xl md:text-7xl font-bold font-sans text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-center">
+              Cat Rescue
+            </h1>
           </div>
         </div>
 
+        {/* Navigation buttons */}
         <button
           className="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
           type="button"
-          data-twe-target="#carouselExampleIndicators"
-          data-twe-slide="prev"
           onClick={prev}
         >
           <span className="inline-block h-8 w-8">
@@ -176,15 +180,11 @@ export default function LandingPage() {
               />
             </svg>
           </span>
-          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-            Previous
-          </span>
+          <span className="sr-only">Previous</span>
         </button>
         <button
           className="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
           type="button"
-          data-twe-target="#carouselExampleIndicators"
-          data-twe-slide="next"
           onClick={next}
         >
           <span className="inline-block h-8 w-8">
@@ -203,9 +203,7 @@ export default function LandingPage() {
               />
             </svg>
           </span>
-          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-            Next
-          </span>
+          <span className="sr-only">Next</span>
         </button>
       </header>
 
