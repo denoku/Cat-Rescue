@@ -13,12 +13,17 @@ import {
 } from '@/components/ui/breadcrumb'
 import { CalendarIcon, Heart, SlashIcon, Users } from 'lucide-react'
 
+// Types for generateMetadata and page params
+type Params = {
+  params: {
+    id: string
+  }
+}
+
 // Dynamic metadata generation based on cat ID
 export async function generateMetadata({
   params,
-}: {
-  params: { id: string }
-}): Promise<Metadata> {
+}: Params): Promise<Metadata> {
   const cat = cats.find((c) => c.id === params.id)
 
   // Return 404 metadata if cat not found
@@ -34,14 +39,14 @@ export async function generateMetadata({
       cat.gender
     } cat available for adoption. ${cat.description.substring(0, 100)}...`,
     alternates: {
-      canonical: `https://your-portfolio-domain.com/projects/cat-rescue/adopt/${cat.id}`,
+      canonical: `/projects/cat-rescue/adopt/${cat.id}`,
     },
     openGraph: {
       title: `Meet ${cat.name} - Available for Adoption`,
       description: `${cat.name} is a ${cat.age} ${cat.gender} looking for a forever home.`,
       images: [
         {
-          url: `https://your-portfolio-domain.com${cat.image}`,
+          url: cat.image,
           width: 800,
           height: 600,
           alt: `${cat.name} - Cat available for adoption`,
@@ -51,7 +56,8 @@ export async function generateMetadata({
   }
 }
 
-export default function CatDetailsPage({ params }: { params: { id: string } }) {
+// Page component with correct type annotation
+export default function CatDetailsPage({ params }: Params) {
   const cat = cats.find((c) => c.id === params.id)
 
   // Handle 404 if cat doesn't exist
