@@ -25,7 +25,18 @@ import {
 import { Label } from '@/components/ui/label'
 import { useEffect, useState } from 'react'
 
-export default function AdoptionPageClient({ cats }) {
+interface Cat {
+  id: string
+  name: string
+  age: string
+  gender: string
+  description: string
+  image: string
+  tags: string[]
+  urgency?: boolean
+}
+
+export default function AdoptionPageClient({ cats }: { cats: Cat[] }) {
   const [searchTerm, setSearchTerm] = useState('')
   const [ageFilter, setAgeFilter] = useState('')
   const [genderFilter, setGenderFilter] = useState('')
