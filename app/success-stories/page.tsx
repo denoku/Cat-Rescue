@@ -5,7 +5,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
@@ -19,7 +18,7 @@ import {
 import { SlashIcon, Quote } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Success Stories | Cat House on the Kings',
+  title: 'Success Stories | Cat Rescue',
   description:
     'Read heartwarming success stories of cats who found their forever homes through our sanctuary.',
 }
@@ -102,7 +101,7 @@ export default function SuccessStoriesPage() {
           >
             <CardHeader>
               <CardTitle className="text-2xl">
-                {story.catName}'s Story
+                {story.catName}&apos;s Story
               </CardTitle>
               <CardDescription>
                 Adopted by {story.adopter} in {story.date}

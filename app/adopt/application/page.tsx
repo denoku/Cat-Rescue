@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import { Button } from '@/components/ui/button'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,9 +10,9 @@ import { SlashIcon } from 'lucide-react'
 import { AdoptionApplicationForm } from '@/components/AdoptionApplicationForm'
 
 export const metadata: Metadata = {
-  title: 'Adoption Application | Cat House on the Kings',
+  title: 'Adoption Application | ',
   description:
-    "Apply to adopt a cat from Cat House on the Kings, California's largest no-cage, no-kill cat sanctuary.",
+    'Apply to adopt a cat from ,  largest no-cage, no-kill cat sanctuary.',
 }
 
 export default function AdoptionApplicationPage() {

@@ -83,34 +83,26 @@ function MobileCounter({
 
 export default function LandingPage() {
   const [current, setCurrent] = useState(0)
-  const [fade, setFade] = useState(true)
   const total = heroImages.length
-  const [showWebcam, setShowWebcam] = useState(false)
 
   // Autoplay with fade animation
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setFade(false)
       setTimeout(() => {
         setCurrent((c) => (c === total - 1 ? 0 : c + 1))
-        setFade(true)
       }, 400) // fade out duration
     }, 4000) // time per slide
     return () => clearTimeout(timeout)
   }, [current, total])
 
   const prev = () => {
-    setFade(false)
     setTimeout(() => {
       setCurrent((c) => (c === 0 ? total - 1 : c - 1))
-      setFade(true)
     }, 400)
   }
   const next = () => {
-    setFade(false)
     setTimeout(() => {
       setCurrent((c) => (c === total - 1 ? 0 : c + 1))
-      setFade(true)
     }, 400)
   }
 
@@ -242,8 +234,8 @@ export default function LandingPage() {
             <p className="text-lg text-muted-foreground mt-4">
               As a 501(c)(3) nonprofit organization, Cat Rescue operates without
               government funding and relies entirely on donations from
-              compassionate supporters. Since our founding, we've saved over
-              50,000 cats and 7,000 dogs, and have spayed and neutered
+              compassionate supporters. Since our founding, we&apos;ve saved
+              over 50,000 cats and 7,000 dogs, and have spayed and neutered
               approximately 90,000 animals! Our sanctuary currently cares for
               more than 700 cats and kittens daily, along with other rescued
               animals. Find out more about our{' '}
@@ -283,9 +275,9 @@ export default function LandingPage() {
               responsible pet ownership accessible to everyone. Our low-cost
               services are available to the public and aim to reduce the number
               of unwanted litters, prevent certain health issues, and reduce
-              behaviors like spraying or roaming. Whether you're a pet owner or
-              caring for community cats, we're here to help make spay/neuter
-              simple and affordable. {''}
+              behaviors like spraying or roaming. Whether you&apos;re a pet
+              owner or caring for community cats, we&apos;re here to help make
+              spay/neuter simple and affordable. {''}
               <Link href="/adopt" className="text-blue-600 ">
                 schedule an appointment
               </Link>{' '}
@@ -467,8 +459,8 @@ export default function LandingPage() {
               </div>
               <h3 className="font-bold text-lg">Parker (Senior, 14yrs)</h3>
               <p className="text-sm text-gray-600 mb-3">
-                Parkers family had to move and couldn't take him. He is a sweet
-                senior who deserves a loving home in his golden years.
+                Parkers family had to move and couldn&apos;t take him. He is a
+                sweet senior who deserves a loving home in his golden years.
               </p>
               <Link
                 href="/urgent-adopt"
@@ -891,7 +883,7 @@ export default function LandingPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-3xl font-bold mb-3">Shadow's Story</h3>
+              <h3 className="text-3xl font-bold mb-3">Shadow&apos;s Story</h3>
               <p className="text-lg mb-4">
                 Shadow was with us for over a year after being found as a stray.
                 This shy black cat finally found his perfect match with the

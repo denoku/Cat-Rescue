@@ -9,7 +9,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
   NavigationMenuViewport,
 } from '@/components/ui/navigation-menu'
 import Link from 'next/link'
@@ -128,17 +127,17 @@ const Nav = () => {
                 <ul className="grid gap-2 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] bg-popover/95 backdrop-blur-sm rounded-lg border shadow-lg">
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
-                      <a
+                      <Link
                         className="flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-hidden select-none focus:shadow-md"
                         href="/"
                       >
                         <div className="mt-4 mb-2 text-lg font-medium text-popover-foreground">
-                          Cat House on the Kings
+                          Cat Rescue
                         </div>
                         <p className="text-muted-foreground text-sm leading-tight">
                           Learn how you can contribute to our mission.
                         </p>
-                      </a>
+                      </Link>
                     </NavigationMenuLink>
                   </li>
                   <ListItem href="/donate" title="Donate">

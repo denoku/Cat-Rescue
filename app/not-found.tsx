@@ -20,7 +20,7 @@ export default function NotFound() {
 
       <p className="text-xl text-center text-gray-600 mb-8 max-w-md">
         Looks like this page went on an adventure and got lost. Even our most
-        curious cats couldn't find it!
+        curious cats couldn&apos;t find it!
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4">

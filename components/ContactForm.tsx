@@ -30,13 +30,15 @@ const formSchema = z.object({
   email: z.string().email({ message: 'Valid email is required' }),
   phone: z.string().optional(),
   subject: z.string().min(1, { message: 'Please select a subject' }),
-  message: z.string().min(10, { message: 'Message must be at least 10 characters' }),
+  message: z
+    .string()
+    .min(10, { message: 'Message must be at least 10 characters' }),
 })
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
-  
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -47,18 +49,18 @@ export default function ContactForm() {
       message: '',
     },
   })
-  
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
-    
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+
     console.log(values)
     setIsSubmitting(false)
     setIsSubmitted(true)
   }
-  
+
   if (isSubmitted) {
     return (
       <div className="bg-[#f5f9e8] p-8 rounded-lg text-center">
@@ -67,9 +69,10 @@ export default function ContactForm() {
         </div>
         <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
         <p className="mb-4">
-          Thank you for contacting us. We'll get back to you as soon as possible.
+          Thank you for contacting us. We&apos;ll get back to you as soon as
+          possible.
         </p>
-        <Button 
+        <Button
           onClick={() => setIsSubmitted(false)}
           className="bg-[#a2bb31] hover:bg-[#8fa82a]"
         >
@@ -78,7 +81,7 @@ export default function ContactForm() {
       </div>
     )
   }
-  
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm">
       <Form {...form}>
@@ -96,7 +99,7 @@ export default function ContactForm() {
               </FormItem>
             )}
           />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
@@ -111,7 +114,7 @@ export default function ContactForm() {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="phone"
@@ -126,15 +129,15 @@ export default function ContactForm() {
               )}
             />
           </div>
-          
+
           <FormField
             control={form.control}
             name="subject"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Subject</FormLabel>
-                <Select 
-                  onValueChange={field.onChange} 
+                <Select
+                  onValueChange={field.onChange}
                   defaultValue={field.value}
                 >
                   <FormControl>
@@ -154,7 +157,7 @@ export default function ContactForm() {
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="message"
@@ -162,23 +165,23 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <Textarea 
-                    placeholder="How can we help you?" 
+                  <Textarea
+                    placeholder="How can we help you?"
                     className="min-h-32 resize-none"
-                    {...field} 
+                    {...field}
                   />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          
-          <Button 
-            type="submit" 
+
+          <Button
+            type="submit"
             className="w-full bg-[#a2bb31] hover:bg-[#8fa82a]"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Sending..." : "Send Message"}
+            {isSubmitting ? 'Sending...' : 'Send Message'}
           </Button>
         </form>
       </Form>

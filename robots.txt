@@ -1,4 +1,4 @@
 /iwh-brianw/Desktop/project/cat-rescue/public/robots.txt
 User-agent: *
 Allow: /
-Sitemap: https://cathouseonthekings.com/sitemap.xml
+Sitemap: https://your-portfolio-domain.com/projects/cat-rescue/sitemap.xml

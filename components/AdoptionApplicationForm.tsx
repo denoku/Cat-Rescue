@@ -26,6 +26,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Button } from './ui/button'
+import Link from 'next/link'
 
 export const AdoptionApplicationForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -109,7 +110,7 @@ export const AdoptionApplicationForm = () => {
             Application Submitted!
           </CardTitle>
           <CardDescription>
-            Thank you for your interest in adopting from Cat House on the Kings.
+            Thank you for your interest in adopting from Cat Rescue.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -120,13 +121,10 @@ export const AdoptionApplicationForm = () => {
           </p>
           <p>
             If you have any questions in the meantime, please contact us at{' '}
-            <a
-              href="mailto:info@cathouseonthekings.com"
-              className="text-[#a2bb31] underline"
-            >
-              info@cathouseonthekings.com
-            </a>{' '}
-            or call us at (555) 123-4567.
+            <Link href="#" className="text-[#a2bb31] underline">
+              [Organization]
+            </Link>{' '}
+            or call us at (123) 456-7890.
           </p>
         </CardContent>
         <CardFooter>
@@ -477,7 +475,7 @@ export const AdoptionApplicationForm = () => {
                 name="childrenAges"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Children's Ages</FormLabel>
+                    <FormLabel>Children&apos;s Ages</FormLabel>
                     <FormControl>
                       <Input placeholder="e.g. 5, 8, 12" {...field} />
                     </FormControl>
@@ -581,7 +579,7 @@ export const AdoptionApplicationForm = () => {
           <CardHeader>
             <CardTitle>Adoption Preferences</CardTitle>
             <CardDescription>
-              Tell us about the cat you're interested in.
+              Tell us about the cat you&apos;re interested in.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -616,7 +614,7 @@ export const AdoptionApplicationForm = () => {
                     />
                   </FormControl>
                   <FormDescription>
-                    Leave blank if you don't have a specific cat in mind
+                    Leave blank if you don&apos;t have a specific cat in mind
                   </FormDescription>
                   <FormMessage />
                 </FormItem>

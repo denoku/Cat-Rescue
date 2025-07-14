@@ -11,9 +11,9 @@ import { DonationForm } from '@/components/DonationForm'
 import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
-  title: 'Donate | Cat House on the Kings',
+  title: 'Donate | Cat Rescue',
   description:
-    'Support our mission of rescuing cats and kittens by donating to Cat House on the Kings.',
+    'Support our mission of rescuing cats and kittens by donating to Cat Rescue',
 }
 
 export default function DonatePage() {

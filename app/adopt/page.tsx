@@ -3,9 +3,9 @@ import AdoptionPageClient from '@/components/AdoptionPageClient'
 
 // Define metadata for SEO
 export const metadata: Metadata = {
-  title: 'Adopt a Cat | Cat House on the Kings',
+  title: 'Adopt a Cat | Cat Rescue',
   description:
-    "Find your perfect feline companion. Browse cats available for adoption at California's largest no-cage, no-kill cat sanctuary.",
+    'Find your perfect feline companion. Browse cats available for adoption at largest no-cage, no-kill cat sanctuary.',
   keywords: [
     'cat adoption',
     'adopt cats',
@@ -14,19 +14,19 @@ export const metadata: Metadata = {
     'pet adoption',
   ],
   alternates: {
-    canonical: 'https://cathouseonthekings.com/adopt',
+    canonical: 'https://your-portfolio-domain.com/adopt',
   },
   openGraph: {
-    title: 'Adopt a Cat | Cat House on the Kings',
+    title: 'Adopt a Cat | Cat Rescue',
     description:
-      "Find your perfect feline companion at California's largest no-cage, no-kill cat sanctuary.",
-    url: 'https://cathouseonthekings.com/adopt',
+      'Find your perfect feline companion at largest no-cage, no-kill cat sanctuary.',
+    url: 'https://your-portfolio-domain.com/adopt',
     images: [
       {
-        url: 'https://cathouseonthekings.com/og-adoption.jpg',
+        url: 'https://your-portfolio-domain.com/og-adoption.jpg',
         width: 1200,
         height: 630,
-        alt: 'Cat adoption at Cat House on the Kings',
+        alt: 'Cat adoption at Cat Rescue',
       },
     ],
     type: 'website',
@@ -92,7 +92,7 @@ export default function AdoptionPage() {
         '@type': 'Product',
         name: cat.name,
         description: cat.description,
-        image: `https://cathouseonthekings.com${cat.image}`,
+        image: `https://your-portfolio-domain.com${cat.image}`,
         offers: {
           '@type': 'Offer',
           availability: 'https://schema.org/InStock',

@@ -142,10 +142,9 @@ export default function AdoptionPageClient({ cats }) {
             Adopt a Cat
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl">
-            Find your perfect feline companion at Cat House on the Kings. All
-            our cats are vaccinated, microchipped, and spayed/neutered. Your
-            adoption fee helps us continue our mission of rescuing more cats in
-            need.
+            Find your perfect feline companion at Cat Rescue. All our cats are
+            vaccinated, microchipped, and spayed/neutered. Your adoption fee
+            helps us continue our mission of rescuing more cats in need.
           </p>
         </div>
 

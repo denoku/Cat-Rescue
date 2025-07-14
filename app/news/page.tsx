@@ -13,9 +13,9 @@ import {
 import { SlashIcon } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'News & Updates | Cat House on the Kings',
+  title: 'News & Updates | Cat Rescue',
   description:
-    'Latest news, events, and updates from Cat House on the Kings cat sanctuary and adoption center.',
+    'Latest news, events, and updates from Cat Rescue cat sanctuary and adoption center.',
 }
 
 // Mock blog posts data
@@ -81,8 +81,8 @@ export default function NewsPage() {
           News & Updates
         </h1>
         <p className="text-lg text-muted-foreground max-w-3xl">
-          Stay informed about the latest happenings at Cat House on the Kings,
-          from adoption events to success stories.
+          Stay informed about the latest happenings at Cat Rescue, from adoption
+          events to success stories.
         </p>
       </div>
 
@@ -111,9 +111,9 @@ export default function NewsPage() {
             <span>By Executive Director</span>
           </div>
           <p className="text-gray-600 mb-4">
-            Our annual "Whiskers & Wine" fundraiser was an incredible success,
-            raising over $75,000 for our medical fund. Thank you to everyone who
-            attended and donated!
+            Our annual &quot;Whiskers &amp; Wine&quot; fundraiser was an
+            incredible success, raising over $75,000 for our medical fund. Thank
+            you to everyone who attended and donated!
           </p>
           <Link
             href="/news/annual-fundraiser"
@@ -152,9 +152,9 @@ export default function NewsPage() {
                 Annual Fundraiser Exceeds Goal by 150%
               </h2>
               <p className="text-white/90 mb-4 max-w-2xl">
-                Our annual "Whiskers & Wine" fundraiser was an incredible
-                success, raising over $75,000 for our medical fund. Thank you to
-                everyone who attended and donated!
+                Our annual &quot;Whiskers &amp; Wine&quot; fundraiser was an
+                incredible success, raising over $75,000 for our medical fund.
+                Thank you to everyone who attended and donated!
               </p>
               <div className="flex items-center text-white/80">
                 <span className="mr-4">May 10, 2023</span>

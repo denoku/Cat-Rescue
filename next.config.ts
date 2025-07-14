@@ -1,7 +1,7 @@
 const nextConfig = {
  images: {
 //   loader: 'akamai',
-  domains: ['localhost', 'www.cathouseonthekings.com', 'images.cathouseonthekings.com'],
+  domains: ['localhost', ],
 //   path: '/',
  }
 };

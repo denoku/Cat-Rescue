@@ -29,21 +29,21 @@ const dosis = Dosis({
   variable: '--font-dosis',
 })
 export const metadata: Metadata = {
-  title: 'Cat House on The Kings',
+  title: 'Cat Rescue | Portfolio Project',
   description:
-    'Cat House on The Kings is a non-profit organization dedicated to rescuing and rehabilitating cats in need.',
+    'A demonstration website for a fictional cat rescue organization. Built by Brian Wheeler using Next.js and Tailwind CSS.',
   openGraph: {
-    title: 'Cat House on The Kings',
+    title: 'Cat Rescue | Portfolio Project',
     description:
-      'Cat House on The Kings is a non-profit organization dedicated to rescuing and rehabilitating cats in need.',
-    url: 'https://cathouseonthekings.com',
-    siteName: 'Cat House on The Kings',
+      'A demonstration website for a fictional cat rescue organization. Built by Brian Wheeler using Next.js and Tailwind CSS.',
+    url: 'https://your-portfolio-domain.com/projects/cat-rescue',
+    siteName: 'Brian Wheeler Portfolio',
     images: [
       {
-        url: 'https://cathouseonthekings.com/og-image.jpg',
+        url: '/og-image.jpg', // Store this locally in your public folder
         width: 1200,
         height: 630,
-        alt: 'Cat House on The Kings',
+        alt: 'Cat Rescue Portfolio Project',
       },
     ],
     locale: 'en_US',
@@ -51,10 +51,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cat House on The Kings',
+    title: 'Cat Rescue | Portfolio Project',
     description:
-      'Cat House on The Kings is a non-profit organization dedicated to rescuing and rehabilitating cats in need.',
-    images: ['https://cathouseonthekings.com/twitter-image.jpg'],
+      'A demonstration website for a fictional cat rescue organization. Built by Brian Wheeler using Next.js and Tailwind CSS.',
+    images: ['/twitter-image.jpg'], // Store this locally
   },
   icons: {
     icon: '/favicon.ico',
@@ -68,25 +68,21 @@ export const metadata: Metadata = {
     follow: true,
     nocache: false,
   },
-  verification: {
-    google: 'google-site-verification-code',
-    yandex: 'yandex-verification-code',
-    me: 'me-verification-code',
-  },
   keywords: [
-    'cats',
-    'rescue',
-    'rehabilitation',
-    'non-profit',
-    'animal welfare',
+    'web development',
+    'portfolio',
+    'next.js',
+    'react',
+    'tailwind css',
+    'frontend development',
   ],
   authors: [
     {
-      name: 'Cat House on The Kings',
-      url: 'https://cathouseonthekings.com',
+      name: 'Brian Wheeler',
+      url: 'https://your-portfolio-domain.com',
     },
   ],
-  creator: 'Brian W',
+  creator: 'Brian Wheeler',
 }
 
 export default function RootLayout({
@@ -102,30 +98,27 @@ export default function RootLayout({
         <LocalBusinessJsonLd
           useAppDir={true}
           type="AnimalShelter"
-          id="https://cathouseonthekings.com"
-          name="Cat House on The Kings"
-          description="California's largest no-cage, no-kill, lifetime cat sanctuary and adoption center"
-          url="https://cathouseonthekings.com"
-          telephone="+15596388696"
+          id="https://your-portfolio-domain.com/projects/cat-rescue"
+          name="Cat Rescue (Portfolio Demo)"
+          description="A fictional cat rescue organization created as a portfolio project to demonstrate web development skills"
+          url="https://your-portfolio-domain.com/projects/cat-rescue"
+          telephone="+15551234567" // Fictional phone number
           address={{
-            streetAddress: '7120 S. Kings River Road',
-            addressLocality: 'Parlier',
+            streetAddress: '123 Portfolio Drive',
+            addressLocality: 'Demo City',
             addressRegion: 'CA',
-            postalCode: '93648',
+            postalCode: '12345',
             addressCountry: 'US',
           }}
           geo={{
-            latitude: '36.5922116',
-            longitude: '-119.523673',
+            latitude: '37.7749',
+            longitude: '-122.4194',
           }}
-          images={[
-            'https://cathouseonthekings.com/image1.jpg',
-            'https://cathouseonthekings.com/image2.jpg',
-          ]}
+          images={['/demo-image1.jpg', '/demo-image2.jpg']}
           sameAs={[
-            'https://facebook.com/cathouseonthekings',
-            'https://twitter.com/cathousekings',
-            'https://instagram.com/cathouseonthekings',
+            'https://your-portfolio-domain.com',
+            'https://github.com/your-username',
+            'https://linkedin.com/in/your-profile',
           ]}
           openingHours={[
             {
@@ -151,18 +144,23 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'NGO',
-              name: 'Cat House on the Kings',
+              name: 'Cat Rescue (Portfolio Demo)',
               description:
-                "California's largest no-cage, no-kill, lifetime cat sanctuary and adoption center",
-              url: 'https://cathouseonthekings.com',
-              logo: 'https://cathouseonthekings.com/logo.png',
+                'A fictional cat rescue organization created as a portfolio project to demonstrate web development skills',
+              url: 'https://your-portfolio-domain.com/projects/cat-rescue',
+              logo: '/logo.png',
               sameAs: [
-                'https://facebook.com/cathouseonthekings',
-                'https://twitter.com/cathousekings',
-                'https://instagram.com/cathouseonthekings',
+                'https://your-portfolio-domain.com',
+                'https://github.com/your-username',
+                'https://linkedin.com/in/your-profile',
               ],
-              nonprofitStatus: 'Registered 501(c)(3)',
-              taxID: '27-0015288',
+              nonprofitStatus: 'Demo / Portfolio Project',
+              additionalType: 'PortfolioProject',
+              author: {
+                '@type': 'Person',
+                name: 'Brian Wheeler',
+                url: 'https://your-portfolio-domain.com',
+              },
             }),
           }}
         />

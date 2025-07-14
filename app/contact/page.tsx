@@ -18,9 +18,9 @@ import {
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Cat House on the Kings',
+  title: 'Contact Us | Cat Rescue',
   description:
-    'Get in touch with Cat House on the Kings. Visit our sanctuary, ask about adoptions, or learn how you can help.',
+    'Get in touch with Cat Rescue. Visit our sanctuary, ask about adoptions, or learn how you can help.',
 }
 
 export default function ContactPage() {
@@ -46,8 +46,8 @@ export default function ContactPage() {
           Contact Us
         </h1>
         <p className="text-lg text-muted-foreground max-w-3xl">
-          We're here to answer your questions about adoptions, volunteering,
-          donations, or sanctuary visits.
+          We&papos;re here to answer your questions about adoptions,
+          volunteering, donations, or sanctuary visits.
         </p>
       </div>
 
@@ -139,14 +139,14 @@ export default function ContactPage() {
             </h3>
             <p>
               Yes! We welcome visitors during our open hours. Please call ahead
-              if you're bringing a large group.
+              if you&apos;re bringing a large group.
             </p>
           </div>
 
           <div>
             <h3 className="text-xl font-bold mb-2">How can I volunteer?</h3>
             <p>
-              We're always looking for volunteers! Please fill out our{' '}
+              We&apos;re always looking for volunteers! Please fill out our{' '}
               <Link href="/volunteer" className="text-[#a2bb31] underline">
                 volunteer application
               </Link>{' '}

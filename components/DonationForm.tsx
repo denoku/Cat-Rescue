@@ -1,5 +1,4 @@
 'use client'
-// Donation form component for Cat House on the Kings
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -25,8 +24,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Heart, CreditCard, AlertCircle } from 'lucide-react'
+import { CreditCard, AlertCircle } from 'lucide-react'
 import Image from 'next/image'
 
 export const DonationForm = () => {
@@ -116,8 +114,8 @@ export const DonationForm = () => {
         </CardHeader>
         <CardContent>
           <p className="text-center mb-4">
-            We've sent a receipt to your email. Your support makes our mission
-            possible!
+            We&apos;ve sent a receipt to your email. Your support makes our
+            mission possible!
           </p>
         </CardContent>
         <CardFooter className="flex justify-center">
@@ -294,7 +292,7 @@ export const DonationForm = () => {
                     />
                   </FormControl>
                   <FormDescription>
-                    We'll send your receipt to this email address
+                    We&apos;ll send your receipt to this email address
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -329,7 +327,7 @@ export const DonationForm = () => {
                   <div className="space-y-1 leading-none">
                     <FormLabel>Make my donation anonymous</FormLabel>
                     <FormDescription>
-                      Your name won't appear in our donor list
+                      Your name won&apos;t appear in our donor list
                     </FormDescription>
                   </div>
                 </FormItem>
@@ -476,8 +474,8 @@ export const DonationForm = () => {
         </div>
 
         <p className="text-center text-sm text-muted-foreground">
-          Cat House on the Kings is a 501(c)(3) nonprofit organization. Your
-          donation is tax-deductible to the extent allowed by law.
+          Cat Rescue is a 501(c)(3) nonprofit organization. Your donation is
+          tax-deductible to the extent allowed by law.
         </p>
       </form>
     </Form>
