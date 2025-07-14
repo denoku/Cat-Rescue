@@ -35,7 +35,7 @@ export const AdoptionApplicationForm = () => {
   const formSchema = z.object({
     firstName: z.string().min(2, 'First name is required'),
     lastName: z.string().min(2, 'Last name is required'),
-    email: z.string().email('Invalid email address'),
+    email: z.email('Invalid email address'),
     phone: z.string().min(10, 'Valid phone number is required'),
     address: z.string().min(5, 'Address is required'),
     city: z.string().min(2, 'City is required'),
@@ -91,7 +91,7 @@ export const AdoptionApplicationForm = () => {
   const showChildrenFields = form.watch('children') === 'yes'
   const showPetFields = form.watch('otherPets') === 'yes'
 
-  async function onSubmit(values) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
 
     // Simulate API call
